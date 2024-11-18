@@ -5,8 +5,6 @@
 
 예시) 기존에 만들어진 2가지 즉시 효과와 1가지 상태 효과를 조합하여 스킬 생성:
 
-csharp
-코드 복사
 public class EMPShockwaveSkill : SkillBase
 {
     public EMPShockwaveSkill() : base("EMP 충격파", SkillTargetType.Single, 10f, 2f) {
@@ -15,6 +13,8 @@ public class EMPShockwaveSkill : SkillBase
         SetStatusEffect(new StunEffect(5));
     }
 }
+
+
 또한, 메시지 시스템을 활용하여 전투 중 발생하는 다양한 행동에 대한 메시지를 한 곳에서 관리하며, 메시지 간 우선순위를 조정하여 동시에 들어오는 메시지들의 타이밍 조정을 용이하게 했습니다. 이러한 설계는 스킬 실행의 일관성을 보장하고, 예기치 않은 충돌이나 타이밍 오류를 최소화하여 더욱 안정적이고 효율적인 전투 시스템을 구축할 수 있도록 해줍니다.
 
 이 프로젝트는 기존 전투 시스템을 단순화하여 설계되었습니다. 이를 위해 각 스킬들의 데이터 설정, 오브젝트 풀 구조, 연출 등의 복잡한 처리들을 제외하고, 핵심 기능에 중점을 두었습니다.
