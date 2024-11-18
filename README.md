@@ -7,8 +7,6 @@
 예시) 기존에 만들어진 2가지 즉시 효과와 1가지 상태 효과를 조합하여 스킬 생성:
 
 ```csharp
-csharp
-코드 복사
 public class EMPShockwaveSkill : SkillBase
 {
     public EMPShockwaveSkill() : base("EMP 충격파", SkillTargetType.Single, 10f, 2f) {
