@@ -33,6 +33,7 @@ public enum MessagePriority : int
 
 이 프로젝트는 기존에 개발했던 전투 시스템을 단순화하여 만들어졌습니다. 이를 위해 각 스킬들의 데이터 설정, 오브젝트 풀 구조, 연출 등의 처리들을 제외하고, 핵심 기능을 넣는데 중점을 두었습니다.
 
-![image](https://github.com/user-attachments/assets/68ea12da-dbf4-494e-96ea-b242c73b27ef)
+![image](https://github.com/user-attachments/assets/aaa8d721-c546-4faa-b3f8-d9642d924538)
+
 
 
