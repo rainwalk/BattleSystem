@@ -65,7 +65,7 @@ public abstract class SkillBase
         this.targetFleet = targetFleet;
         this.targetShip = targetShip;
 
-        Debug.Log($"<color=white>{Time.time:F2}s {originShip.Name}이(가) 스킬({id}) {name} 캐스팅 시작</color>");
+        Debug.Log($"{Time.time:F2}s <color=white>{originShip.Name}이(가) 스킬({id}) {name} 캐스팅 시작</color>");
     }
 
     // 쿨타임 및 캐스팅 진행 업데이트
