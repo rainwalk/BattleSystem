@@ -10,12 +10,12 @@ public class SkillHandler
     }
 
     // 스킬 업데이트 처리
-    public void UpdateSkills(float deltaTime) { foreach (SkillBase skill in skills) skill.UpdateCooldownAndCast(deltaTime); }
-    public bool IsSkillCasting() => skills.Exists(skill => skill.IsCasting);
+    public void UpdateSkills(float deltaTime) { foreach (SkillBase skill in skills) skill.Update(deltaTime); }
+    public bool IsSkillCasting() => skills.Exists(skill => skill.State == CastingState.Casting);
     public SkillBase GetNextAvailableSkill() => skills.Find(skill => skill.IsAvailable());
     public bool TryUseSkill(Ship originShip, Fleet targetFleet) {
         SkillBase skill = GetNextAvailableSkill();
-        if (skill ==  null) return false;
+        if (skill == null) return false;
 
         var target = skill.TargetType == SkillTargetType.All ? (object)targetFleet : targetFleet.FindTarget();
         MessageManager.Instance.EnqueueMessage(new UseSkillMessage(MessagePriority.High, originShip, skill, target as Fleet, target as Ship));
