@@ -44,9 +44,7 @@ public abstract class SkillBase
         effects = new List<IEffect>();
         id = skillCounter++; // 스킬 고유 ID 설정
     }
-
     public void AddEffect(IEffect effect) => effects.Add(effect);
-
     public void SetStatusEffect(IStatusEffect statusEffect) => this.statusEffect = statusEffect;
 
     // 사용 가능한지 확인
@@ -72,9 +70,7 @@ public abstract class SkillBase
         switch (State) {
             case CastingState.Casting:
                 castTimer -= deltaTime;
-                if (castTimer <= 0) {
-                    CompleteCasting();
-                }
+                if (castTimer <= 0) CompleteCasting();
                 break;
 
             case CastingState.Idle:
@@ -127,6 +123,6 @@ public abstract class SkillBase
     }
 
     private void LogSkillExecution(string shipName, string targetName, int skillId, string skillName) {
-        Debug.Log($"{Time.time:F2}s {shipName}이(가) {targetName}에 스킬({skillId}) {skillName} 사용");
+        Debug.Log($"{Time.time:F2}s <color=white>{shipName}이(가) {targetName}에 스킬({skillId}) {skillName} 사용</color>");
     }
 }
