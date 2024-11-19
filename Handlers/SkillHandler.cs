@@ -9,7 +9,6 @@ public class SkillHandler
         this.skills = skills;
     }
 
-    // 스킬 업데이트 처리
     public void UpdateSkills(float deltaTime) { foreach (SkillBase skill in skills) skill.Update(deltaTime); }
     public bool IsSkillCasting() => skills.Exists(skill => skill.State == CastingState.Casting);
     public SkillBase GetNextAvailableSkill() => skills.Find(skill => skill.IsAvailable());
