@@ -7,7 +7,7 @@ public class BattleManager : MonoBehaviour
     private Fleet playerFleet;
     private Fleet enemyFleet;
     private bool battleInProgress = false;
- 
+
     private IBattleLoop battleLoop;
 
 
@@ -33,7 +33,7 @@ public class BattleManager : MonoBehaviour
     void Update() {
         if (battleInProgress) {
             battleLoop.Update();
-            MessageManager.Instance.ProcessMessages(); 
+            MessageManager.Instance.ProcessMessages();
             CheckVictory();
         }
     }
