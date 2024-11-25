@@ -20,29 +20,25 @@ public class Ship
         statusEffectHandler = new StatusEffectHandler();
         attackHandler = new AttackHandler(weapon);
     }
-
-    public bool IsStunned() => statusEffectHandler.IsStunned();
-    public void SetStunned(bool stunned) => statusEffectHandler.SetStunned(stunned);
-    public void ApplyStatusEffect(IStatusEffect effect) => statusEffectHandler.ApplyStatusEffect(effect, this);
-    public void RemoveStatusEffect(IStatusEffect effect) => statusEffectHandler.RemoveStatusEffect(effect);
-
     public void UpdateShip(float deltaTime) {
         skillHandler.UpdateSkills(deltaTime);
         statusEffectHandler.UpdateStatusEffect(this, deltaTime);
         attackHandler.UpdateCooldown(deltaTime);
     }
-
-    public bool TryUseSkill(Fleet targetFleet) => skillHandler.TryUseSkill(this, targetFleet);
-
     public void TryAttack(Fleet targetFleet) {
         if (CanAttack()) {
             attackHandler.TryAttack(targetFleet, this);
         }
     }
-
-    public void ResetAttackCooldown() => attackHandler.ResetCooldown();
+    public bool TryUseSkill(Fleet targetFleet) => skillHandler.TryUseSkill(this, targetFleet);
+    public bool IsStunned() => statusEffectHandler.IsStunned();
     public bool CanAttack() => IsAlive() && !IsStunned() && !skillHandler.IsSkillCasting() && attackHandler.IsAttackReady();
+    public bool IsAlive() => Count > 0;
+
+    public void SetStunned(bool stunned) => statusEffectHandler.SetStunned(stunned);
+    public void ApplyStatusEffect(IStatusEffect effect) => statusEffectHandler.ApplyStatusEffect(effect, this);
+    public void RemoveStatusEffect(IStatusEffect effect) => statusEffectHandler.RemoveStatusEffect(effect);
+    public void ResetAttackCooldown() => attackHandler.ResetCooldown();
     public void TakeDamage(int damage) => Count = Mathf.Max(Count - damage, 0);
     public void Repair(int amount) => Count += amount;
-    public bool IsAlive() => Count > 0;
 }
