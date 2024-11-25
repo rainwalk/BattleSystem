@@ -22,13 +22,13 @@ public class BattleManager : MonoBehaviour
         enemyFleet.AddShip(new Ship("Enemy Ship 4", 200, new Weapon(WeaponType.Missile), new List<SkillBase> { new OmegaStrikeSkill() }));
     }
 
-    void Start() {
+    private void Start() {
         InitializeFleets();
         battleLoop = new BattleLoop(playerFleet, enemyFleet);
         battleInProgress = true;
     }
 
-    void Update() {
+    private void Update() {
         if (battleInProgress) {
             battleLoop.Update();
             MessageManager.Instance.ProcessMessages();
