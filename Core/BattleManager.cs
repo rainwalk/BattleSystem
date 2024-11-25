@@ -7,9 +7,7 @@ public class BattleManager : MonoBehaviour
     private Fleet playerFleet;
     private Fleet enemyFleet;
     private bool battleInProgress = false;
-
     private IBattleLoop battleLoop;
-
 
     private void InitializeFleets() {
         playerFleet = new Fleet("Player Fleet");
@@ -41,7 +39,7 @@ public class BattleManager : MonoBehaviour
     private void CheckVictory() {
         if (!enemyFleet.IsAlive() || !playerFleet.IsAlive()) {
             battleInProgress = false;
-            Debug.Log(enemyFleet.IsAlive() ? "Àû ½Â¸®!" : "ÇÃ·¹ÀÌ¾î ½Â¸®!");
+            Debug.Log(enemyFleet.IsAlive() ? "ì  ìŠ¹ë¦¬!" : "í”Œë ˆì´ì–´ ìŠ¹ë¦¬!");
         }
     }
 }
