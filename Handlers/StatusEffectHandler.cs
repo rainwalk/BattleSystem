@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class StatusEffectHandler
 {
-    private readonly List<IStatusEffect> activeStatusEffects; // È°¼º »óÅÂ È¿°ú
-    private readonly List<IStatusEffect> statusEffectsToRemove;// Á¦°Å ´ë±â »óÅÂ È¿°ú
-
+    private readonly List<IStatusEffect> activeStatusEffects; // í™œì„± ìƒíƒœ íš¨ê³¼
+    private readonly List<IStatusEffect> statusEffectsToRemove;// ì œê±° ëŒ€ê¸° ìƒíƒœ íš¨ê³¼
     private bool isStunned;
 
     public bool IsStunned() => isStunned;
@@ -26,6 +25,4 @@ public class StatusEffectHandler
         foreach (IStatusEffect effect in statusEffectsToRemove) activeStatusEffects.Remove(effect);
         statusEffectsToRemove.Clear();
     }
-
-
 }
