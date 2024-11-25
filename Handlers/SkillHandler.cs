@@ -9,9 +9,6 @@ public class SkillHandler
         this.skills = skills;
     }
 
-    public void UpdateSkills(float deltaTime) { foreach (SkillBase skill in skills) skill.Update(deltaTime); }
-    public bool IsSkillCasting() => skills.Exists(skill => skill.State == CastingState.Casting);
-    public SkillBase GetNextAvailableSkill() => skills.Find(skill => skill.IsAvailable());
     public bool TryUseSkill(Ship originShip, Fleet targetFleet) {
         SkillBase skill = GetNextAvailableSkill();
         if (skill == null) return false;
@@ -22,5 +19,7 @@ public class SkillHandler
         return true;
     }
 
-
+    public void UpdateSkills(float deltaTime) { foreach (SkillBase skill in skills) skill.Update(deltaTime); }
+    public bool IsSkillCasting() => skills.Exists(skill => skill.State == CastingState.Casting);
+    public SkillBase GetNextAvailableSkill() => skills.Find(skill => skill.IsAvailable());
 }
