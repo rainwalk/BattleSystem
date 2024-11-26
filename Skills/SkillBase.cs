@@ -118,7 +118,7 @@ public abstract class SkillBase
             if (target.IsAlive()) effect.ApplyEffect(originShip, target);
         }
         if (statusEffect != null && target.IsAlive()) {
-            target.ApplyStatusEffect(statusEffect);
+            target.ApplyStatusEffect(statusEffect, originShip, target);
         }
     }
 

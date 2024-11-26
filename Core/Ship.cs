@@ -36,7 +36,7 @@ public class Ship
     public bool IsAlive() => Count > 0;
 
     public void SetStunned(bool stunned) => statusEffectHandler.SetStunned(stunned);
-    public void ApplyStatusEffect(IStatusEffect effect) => statusEffectHandler.ApplyStatusEffect(effect, this);
+    public void ApplyStatusEffect(IStatusEffect effect, Ship origin, Ship target) => statusEffectHandler.ApplyStatusEffect(effect,origin,target);
     public void RemoveStatusEffect(IStatusEffect effect) => statusEffectHandler.RemoveStatusEffect(effect);
     public void ResetAttackCooldown() => attackHandler.ResetCooldown();
     public void TakeDamage(int damage) => Count = Mathf.Max(Count - damage, 0);

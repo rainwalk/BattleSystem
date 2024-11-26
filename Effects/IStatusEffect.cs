@@ -1,5 +1,4 @@
-public interface IStatusEffect
+public interface IStatusEffect : IEffect
 {
-    void ApplyEffect(Ship ship);
     void UpdateEffect(Ship ship, float deltaTime);
 }

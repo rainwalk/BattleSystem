@@ -15,8 +15,8 @@ public class StatusEffectHandler
         activeStatusEffects = new List<IStatusEffect>();
         statusEffectsToRemove = new List<IStatusEffect>();
     }
-    public void ApplyStatusEffect(IStatusEffect effect, Ship ship) {
-        effect.ApplyEffect(ship);
+    public void ApplyStatusEffect(IStatusEffect effect, Ship origin, Ship target) {
+        effect.ApplyEffect(origin, target);
         activeStatusEffects.Add(effect);
     }
     public void RemoveStatusEffect(IStatusEffect effect) => statusEffectsToRemove.Add(effect);
