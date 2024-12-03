@@ -57,7 +57,7 @@ public class EMPShockwaveSkill : SkillBase
 - 함선의 스킬 처리 시스템입니다. 스킬의 상태를 업데이트하고 스킬을 사용하는 클래스입니다.
 #### SkillBase
 - 스킬의 기본 클래스입니다.
-- 스킬은 쿨다운, 캐스트 시간, 효과 등을 관리합니다
+- 스킬의 쿨다운, 캐스트 시간, 효과 등을 관리합니다
 #### EffectBase 및 IEffect
 - 상태 효과(예: 피해, 수리)를 적용하는 추상 클래스와 인터페이스입니다.
 - `DamageEffect`와 `RepairEffect` 같은 구체적인 상태 효과 클래스를 통해 함선에 영향을 줍니다.
